@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Superteam:</strong>
+  <%= @team.superteam_id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @team.name %>
+</p>
+
+<p>
+<% cache @team.subteams do %>
+  <% @team.subteams.each do |subteam| %>
+    <% cache subteam do %>
+      <%= render partial: "subteam", object: subteam  %>
+    <% end %>
+  <% end %>
+<% end %>
+</p>
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>
+<%= link_to 'New Subteam', new_team_path(superteam_id: @team) %>
+<%= link_to 'New Teammember', new_teammember_path(team_id: @team) %>
