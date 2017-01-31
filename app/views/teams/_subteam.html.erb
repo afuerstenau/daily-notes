@@ -1,0 +1,9 @@
+<div class="subteam">
+  <%= subteam.name %><br>
+  <% subteam.teammembers.each do |teammember| %>
+    <%= form_for(teammember) do |f| %>
+      <%= teammember.name %><%= f.check_box :ooo %><%= f.submit %>
+    <% end %>
+    <br>
+  <% end %>
+</div>
