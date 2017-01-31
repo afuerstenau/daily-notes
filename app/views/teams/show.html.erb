@@ -28,6 +28,8 @@
 <%= link_to 'New Teammember', new_teammember_path(team_id: @team) %>
 </div>
 
+<div style="font:14px 'Helvetica Neue'; color:#AAAAAA">
 OOO:<% @team.all_ooo_teammembers.each do |teammember| %>
 <%= teammember.name %><%= "," unless teammember.eql?(@team.all_ooo_teammembers.last) %>
 <% end %>
+</div>
