@@ -63,6 +63,19 @@ class TeammembersController < ApplicationController
     end
   end
 
+  def toggle_ooo
+    @teammember = Teammember.find(params[:id])
+    if @teammember.ooo
+      @teammember.ooo = false
+    else
+      @teammember.ooo = true
+    end
+    @teammember.save
+    @team = Team.find(1)
+    redirect_to @team
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_teammember

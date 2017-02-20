@@ -1,9 +1,7 @@
 <div class="subteam">
   <%= subteam.name %><br>
   <% subteam.teammembers.each do |teammember| %>
-    <%= form_for(teammember, remote: true) do |f| %>
-      <%= teammember.name %><%= f.check_box :ooo %><%= f.submit %>
-    <% end %>
+  <%= link_to teammember.name, { controller: "teammembers", action: "toggle_ooo", id: teammember }, method: :post, class: 'is_ooo_'+teammember.ooo.to_s %>
     <br>
   <% end %>
 </div>
