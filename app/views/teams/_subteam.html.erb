@@ -1,7 +1,7 @@
 <div class="subteam">
   <%= subteam.name %><br>
   <% subteam.teammembers.each do |teammember| %>
-    <%= form_for(teammember) do |f| %>
+    <%= form_for(teammember, remote: true) do |f| %>
       <%= teammember.name %><%= f.check_box :ooo %><%= f.submit %>
     <% end %>
     <br>

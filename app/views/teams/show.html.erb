@@ -4,14 +4,12 @@
   <strong>Superteam:</strong>
   <%= @team.superteam_id %>
 </p>
+
+
 <div class="subteam">
   <strong>Name:</strong>
   <%= @team.name %><br>
-  <% @team.teammembers.each do |teammember| %>
-    <%= form_for(teammember) do |f| %>
-      <%= teammember.name %><%= f.check_box :ooo %><%= f.submit %>
-    <% end %>
-  <% end %>
+  <%= render (@team.teammembers) %>
 </div>
 <div style="clear: both;">
 <% cache @team.subteams do %>
@@ -28,6 +26,4 @@
 <%= link_to 'New Teammember', new_teammember_path(team_id: @team) %>
 </div>
 
-OOO:<% @team.all_ooo_teammembers.each do |teammember| %>
-<%= teammember.name %><%= "," unless teammember.eql?(@team.all_ooo_teammembers.last) %>
-<% end %>
+<%= render partial: "ooo", object: @team  %>
