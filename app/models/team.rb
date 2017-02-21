@@ -13,6 +13,8 @@ class Team < ApplicationRecord
     subteams.each do |subteam|
       ooo_teammembers |= subteam.all_ooo_teammembers
     end
+
+    ooo_teammembers = ooo_teammembers.sort {|x,y| x[:name]<=>y[:name]}
     return ooo_teammembers
   end
 end
