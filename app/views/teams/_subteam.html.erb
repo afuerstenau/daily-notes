@@ -1,7 +1,4 @@
 <div class="subteam">
   <%= subteam.name %><br>
-  <% subteam.teammembers.each do |teammember| %>
-  <%= link_to teammember.name, { controller: "teammembers", action: "toggle_ooo", id: teammember }, method: :post, class: 'is_ooo_'+teammember.ooo.to_s %>
-    <br>
-  <% end %>
+  <%= render subteam.teammembers %>
 </div>
