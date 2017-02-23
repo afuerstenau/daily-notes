@@ -1,4 +1,4 @@
-<div id="ooo">
+<div id="ooo" class="ooo">
 OOO:<% @team.all_ooo_teammembers.each do |teammember| %>
 <%= teammember.name %><%= "," unless teammember.eql?(@team.all_ooo_teammembers.last) %>
 <% end %>
