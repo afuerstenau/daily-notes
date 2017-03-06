@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'daily_notes#index', as: 'notes_index'
+
   resources :teammembers do
     member do
       post 'toggle_ooo'

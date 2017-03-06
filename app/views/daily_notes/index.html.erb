@@ -1,0 +1,13 @@
+<h1>Daily Notes</h1>
+
+<div class="subteam">
+  <strong>Name:</strong>
+  <%= @team.name %><br>
+  <%= render (@team.teammembers) %>
+</div>
+<div style="clear: both;">
+<%= render (@team.subteams) %>
+<div style="clear: both;">
+<br>
+<%= render partial: "ooo", object: @team  %>
+</div>

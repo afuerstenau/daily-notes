@@ -72,7 +72,7 @@ class TeammembersController < ApplicationController
     end
     @teammember.save
     @team = Team.find(1)
-    redirect_to @team
+    redirect_to notes_index_url
 
   end
 
