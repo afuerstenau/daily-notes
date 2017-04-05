@@ -15,7 +15,7 @@
 <% cache @team.subteams do %>
   <% @team.subteams.each do |subteam| %>
     <% cache subteam do %>
-      <%= render partial: "subteam", object: subteam  %>
+      <%= render partial: "team", object: subteam  %>
     <% end %>
   <% end %>
 <% end %>
@@ -25,5 +25,3 @@
 <%= link_to 'New Subteam', new_team_path(superteam_id: @team) %>
 <%= link_to 'New Teammember', new_teammember_path(team_id: @team) %>
 </div>
-
-<%= render partial: "ooo", object: @team  %>

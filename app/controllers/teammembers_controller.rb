@@ -43,7 +43,7 @@ class TeammembersController < ApplicationController
   def update
     respond_to do |format|
       if @teammember.update(teammember_params)
-        format.js
+        # format.js
         format.html { redirect_to @teammember, notice: 'Teammember was successfully updated.' }
         format.json { render :show, status: :ok, location: @teammember }
       else
