@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.is_ooo_true {
+.is_outofoffice {
+  color:blue;
+}
+
+.is_missing {
   color:red;
+}
+
+.is_inhomeoffice {
+  color:green;
 }

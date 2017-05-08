@@ -1,2 +1,2 @@
-<%= link_to teammember.name, { controller: "teammembers", action: "toggle_ooo", id: teammember }, method: :post, class: 'is_ooo_'+teammember.ooo.to_s %>
+<%= link_to teammember.name, { controller: "teammembers", action: "toggle_ooo", id: teammember }, method: :post, class: 'is_'+teammember.state_without_whitespace_lowercase %>
   <br>

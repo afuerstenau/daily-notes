@@ -65,11 +65,15 @@ class TeammembersController < ApplicationController
 
   def toggle_ooo
     @teammember = Teammember.find(params[:id])
-    if @teammember.ooo
-      @teammember.ooo = false
-    else
-      @teammember.ooo = true
-    end
+    if @teammember.state == "In the Office"
+      @teammember.state = "Out of Office"
+    elsif @teammember.state == "Out of Office"
+      @teammember.state = "Missing"
+    elsif @teammember.state == "Missing"
+       @teammember.state = "In Home Office"
+     else
+       @teammember.state = "In the Office"
+     end
     @teammember.save
     @team = Team.find(1)
     redirect_to notes_index_url
@@ -88,6 +92,6 @@ class TeammembersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teammember_params
-      params.require(:teammember).permit(:name, :team_id, :ooo)
+      params.require(:teammember).permit(:name, :team_id, :state)
     end
 end

@@ -9,5 +9,9 @@
 <%= render (@team.subteams) %>
 <div style="clear: both;">
 <br>
+OOO: (<%= @team.all_ooo_teammembers.length %>) Missing: (<%= @team.all_missing_teammembers.length %>) Home Office: (<%= @team.all_homeoffice_teammembers.length %>)
+<br>Copy Part:<br><br>
 <%= render partial: "ooo", object: @team  %>
+<%= render partial: "missing", object: @team  %>
+<%= render partial: "homeoffice", object: @team  %>
 </div>
