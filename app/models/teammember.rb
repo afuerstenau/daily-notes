@@ -1,5 +1,6 @@
 class Teammember < ApplicationRecord
   belongs_to :team
+  has_many :notes
   
   def ooo
     return state == "Out of Office"
