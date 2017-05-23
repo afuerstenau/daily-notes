@@ -4,7 +4,16 @@
 <% else %>
 <%= link_to goal.summary, goal.link %>
 <% end %>
-<%= %><span id="goal_buttons"><%= link_to 'Edit', edit_goal_path(goal)%> <%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+
+<% if not goal.eta.empty? %>
+(ETA: <%= goal.eta%>)
+<% end %>
+
+<% if not goal.due_date.empty? %>
+(Due: <%= goal.due_date%>)
+<% end %>
+
+<span id="goal_buttons"><%= link_to 'Edit', edit_goal_path(goal)%> <%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></span>
 </li>
 
         
