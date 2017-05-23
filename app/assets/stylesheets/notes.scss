@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.notes span {
+.notes li span, #add_button {
 	display: none;
 }
 
-.notes li:hover span {
+.notes li:hover span, .notes #note_headline:hover #add_button {
 	display: inline;
 }
 
@@ -16,3 +16,4 @@
   font-family: helvetica;
   font-weight: bold;
 }
+
