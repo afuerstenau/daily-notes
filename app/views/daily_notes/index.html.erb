@@ -20,7 +20,7 @@ Goals:
 </div>
 
 <div class="notes" >
-<span id="note_headline">Notes:<span id="add_button"><%= link_to 'New Note', new_note_path %></span></span>
+<span id="note_headline">Notes:<span id="add_button"><%= link_to '+', new_note_path %></span></span>
 <ul class="notes" style="list-style-type:disc; padding:0; margin:18px;margin-top:0px;">
 <%= render (Note.all)%>
 </ul>
