@@ -12,6 +12,13 @@
 OOO: (<%= @team.all_ooo_teammembers.length %>) Missing: (<%= @team.all_missing_teammembers.length %>) Home Office: (<%= @team.all_homeoffice_teammembers.length %>)
 <br>Copy Part:<br><br>
 
+<div class="goals" >
+Goals:
+<ol class="goals" style="margin:18px">
+<%= render (Goal.all)%>
+</ol>
+</div>
+
 <div class="notes" >
 Notes:
 <ul class="notes" style="list-style-type:disc; padding:0; margin:18px">

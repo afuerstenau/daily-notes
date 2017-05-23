@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :goals
   resources :notes
   root 'daily_notes#index', as: 'notes_index'
 
