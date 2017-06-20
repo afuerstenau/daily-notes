@@ -71,9 +71,9 @@ class TeammembersController < ApplicationController
       @teammember.state = "Missing"
     elsif @teammember.state == "Missing"
        @teammember.state = "In Home Office"
-     else
+    else
        @teammember.state = "In the Office"
-     end
+    end
     @teammember.save
     @team = Team.find(1)
     redirect_to notes_index_url
