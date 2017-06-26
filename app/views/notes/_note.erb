@@ -1,5 +1,5 @@
 <li>
-<%= note.text %> @<%= note.teammember_name%> <span id="note_buttons"><%= link_to '&#9998;'.html_safe, edit_note_path(note)%> <%= link_to '-', note, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+<%= "\#"+note.goal.hashtag unless note.goal.nil? %> <%= note.text %> @<%= note.teammember_name%> <span id="note_buttons"><%= link_to '&#9998;'.html_safe, edit_note_path(note)%> <%= link_to '-', note, method: :delete, data: { confirm: 'Are you sure?' } %></span>
 </li>
 
         
