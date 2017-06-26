@@ -20,6 +20,11 @@
     <%= f.label :teammember_id %>
     <%= f.select :teammember_id, Teammember::all.map { |teammember| [teammember.name, teammember.id] } %>
   </div>
+  
+  <div class="field">
+    <%= f.label :goal_id %>
+    <%= f.select :goal_id, Goal::all.map { |goal| [goal.summary, goal.id] }, {include_blank: 'None'} %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
