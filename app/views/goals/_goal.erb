@@ -1,4 +1,8 @@
-<li>
+<% if goal.has_changed_today() %>
+	<li class="updated">
+<% else %>
+	<li>	
+<% end %>
 <% if goal.link.blank? %>
 <%= goal.summary %>
 <% else %>
