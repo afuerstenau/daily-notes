@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :teammember_id %>
-    <%= f.select :teammember_id, Teammember::all.map { |teammember| [teammember.name, teammember.id] } %>
+    <%= f.select :teammember_id, Teammember::order(name: :asc).map { |teammember| [teammember.name, teammember.id] } %>
   </div>
   
   <div class="field">
