@@ -68,8 +68,6 @@ class TeammembersController < ApplicationController
     if @teammember.state == "In the Office"
       @teammember.state = "Out of Office"
     elsif @teammember.state == "Out of Office"
-      @teammember.state = "Missing"
-    elsif @teammember.state == "Missing"
        @teammember.state = "In Home Office"
     else
        @teammember.state = "In the Office"

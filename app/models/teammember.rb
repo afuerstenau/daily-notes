@@ -6,10 +6,6 @@ class Teammember < ApplicationRecord
     return state == "Out of Office"
   end
   
-  def missing
-    return state == "Missing"
-  end
-  
   def homeoffice
     return state == "In Home Office"
   end

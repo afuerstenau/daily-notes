@@ -18,21 +18,6 @@ class Team < ApplicationRecord
     return ooo_teammembers
   end
   
-  def all_missing_teammembers
-    missing_teammembers = Array.new
-    teammembers.each do |teammember|
-      if (teammember.missing) then
-        missing_teammembers << teammember unless !teammember.missing
-      end
-    end
-    subteams.each do |subteam|
-      missing_teammembers |= subteam.all_missing_teammembers
-    end
-
-    missing_teammembers = missing_teammembers.sort {|x,y| x[:name]<=>y[:name]}
-    return missing_teammembers
-  end
-  
   def all_homeoffice_teammembers
     homeoffice_teammembers = Array.new
     teammembers.each do |teammember|
