@@ -16,7 +16,7 @@ OOO: (<%= @team.all_ooo_teammembers.length %>) Home Office: (<%= @team.all_homeo
 <div class="goals">
 Goals:
 <ol class="goals" style="margin:18px;margin-top:0px;">
-<%= render (Goal.all)%>
+<%= render (Goal.order(:priority))%>
 </ol>
 </div>
 
