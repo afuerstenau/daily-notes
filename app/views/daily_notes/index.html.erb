@@ -1,16 +1,10 @@
 <p id="notice"><%= notice %></p>
 <h1>Daily Notes</h1>
 
-<div class="subteam">
-  <strong>Name:</strong>
-  <%= @team.name %><br>
-  <%= render (@team.teammembers) %>
-</div>
-<div style="clear: both;">
-<%= render (@team.subteams) %>
-<div style="clear: both;">
+<%= render (@team) %>
+<div style="clear: both;"/>
 <br>
-OOO: (<%= @team.all_ooo_teammembers.length %>) Home Office: (<%= @team.all_homeoffice_teammembers.length %>)
+OOO: (<%= @team.all_ooo_teammembers.length unless @team.nil? %>) Home Office: (<%= @team.all_homeoffice_teammembers.length unless @team.nil? %>)
 <br>Copy Part:<br><br>
 
 <div class="goals">

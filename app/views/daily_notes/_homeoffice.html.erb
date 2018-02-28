@@ -1,7 +1,9 @@
 <div id="homeoffice" class="ooo">
 Home Office:
-<%= "-" unless @team.all_homeoffice_teammembers.length > 0%>
-<% @team.all_homeoffice_teammembers.each do |teammember| %>
-<%= teammember.name %><%= "," unless teammember.eql?(@team.all_homeoffice_teammembers.last) %>
+<% if !@team.nil? %>
+	<%= "-" unless @team.all_homeoffice_teammembers.length > 0%>
+	<% @team.all_homeoffice_teammembers.each do |teammember| %>
+	<%= teammember.name %><%= "," unless 	teammember.eql?(@team.all_homeoffice_teammembers.last) %>
+	<% end %>
 <% end %>
 </div>
