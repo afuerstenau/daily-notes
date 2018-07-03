@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<h1>Daily Notes</h1>
+<h1>Daily Notes Test</h1>
 
 <%= render (@team) %>
 <div style="clear: both;"/>
@@ -17,7 +17,7 @@ Goals:
 <div class="notes" >
 <span id="note_headline">Notes:<span id="add_button"><%= link_to '+', new_note_path %></span></span>
 <ul class="notes" style="list-style-type:disc; padding:0; margin:18px;margin-top:0px;">
-<%= render (Note.all)%>
+<%= render (Note.where(goal: nil))%>
 </ul>
 </div>
 

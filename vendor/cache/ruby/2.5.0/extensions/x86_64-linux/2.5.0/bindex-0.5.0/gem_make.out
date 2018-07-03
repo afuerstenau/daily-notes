@@ -1,0 +1,15 @@
+current directory: /produciton/vendor/cache/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+/usr/local/bin/ruby -r ./siteconf20180319-1-cbgeva.rb extconf.rb
+creating Makefile
+
+current directory: /produciton/vendor/cache/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /produciton/vendor/cache/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.so
+
+current directory: /produciton/vendor/cache/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20180319-1-81ausj/bindex

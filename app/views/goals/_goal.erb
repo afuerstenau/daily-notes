@@ -21,5 +21,6 @@
 
 <span id="goal_buttons"><%= link_to 'Edit', edit_goal_path(goal)%> <%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></span>
 </li>
-
-        
+<ul>
+<%= render goal.notes %>
+</ul>
