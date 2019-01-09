@@ -23,7 +23,7 @@
   
   <div class="field">
     <%= f.label :goal_id %>
-    <%= f.select :goal_id, Goal::order(priority: :asc).map { |goal| [goal.summary, goal.id] }, {include_blank: 'None'} %>
+    <%= f.select :goal_id, Goal::order(priority: :asc).map { |goal| [goal.prio_and_summary, goal.id] }, {include_blank: 'None'} %>
   </div>
 
   <div class="actions">
