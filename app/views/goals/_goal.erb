@@ -4,9 +4,9 @@
 	<li>	
 <% end %>
 <% if goal.link.blank? %>
-<%= goal.summary %>
+<%= goal.summary %><%= '('+goal.info+')' unless goal.info.blank? %>
 <% else %>
-<%= link_to goal.summary, goal.link %>
+<%= link_to goal.summary, goal.link %> <%= '('+goal.info+')' unless goal.info.blank? %>
 <% end %>
 
 <% if not goal.eta.empty? %>
