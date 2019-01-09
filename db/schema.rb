@@ -10,42 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127105652) do
+ActiveRecord::Schema.define(version: 20190109152142) do
 
   create_table "goals", force: :cascade do |t|
-    t.string   "summary"
-    t.string   "link"
-    t.string   "due_date"
-    t.string   "eta"
+    t.string "summary"
+    t.string "link"
+    t.string "due_date"
+    t.string "eta"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "hashtag",    null: false
-    t.integer  "priority"
+    t.integer "priority"
   end
 
   create_table "notes", force: :cascade do |t|
-    t.string   "text"
-    t.integer  "teammember_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "goal_id"
+    t.string "text"
+    t.integer "teammember_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "goal_id"
     t.index ["goal_id"], name: "index_notes_on_goal_id"
   end
 
   create_table "teammembers", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.integer  "team_id"
-    t.string   "state",      default: "In the Office"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "team_id"
+    t.string "state", default: "In the Office"
     t.index ["team_id"], name: "index_teammembers_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "superteam_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "superteam_id"
     t.index ["superteam_id"], name: "index_teams_on_superteam_id"
   end
 
